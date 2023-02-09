@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .my_modal {
+        max-width: 300px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: 0.2s ease-in;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 25px;
+      }
+
+      .my_modal.active {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button data-modal-target="#modal">Modal</button>
+
+      <div class="my_modal" id="modal">
+        <div class="modal_header">
+          <button close-data-modal>&times;</button>
+        </div>
+        <div class="modal_body">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere non
+            accusamus ullam, nostrum sed doloremque veniam fugiat vitae quis,
+            est numquam maiores nesciunt corrupti ipsa necessitatibus repellat
+            molestias asperiores consequatur.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function add_event_function(my_element) {
+        if (my_element.classList.contains("active")) {
+          console.log("already has been added");
+        } else {
+          console.log("Not added yet");
+          my_element.classList.add("active");
+        }
+      }
+      const first_button = document.querySelectorAll("[data-modal-target]");
+      const close_btn = document.querySelectorAll("[close-data-modal]");
+
+      first_button.forEach((button) => {
+        button.addEventListener("click", () => {
+          const x = document.querySelector(button.dataset.modalTarget);
+          console.log(x);
+
+          add_event_function(x);
+        });
+      });
+
+      close_btn.forEach((button) => {
+        button.addEventListener("click", () => {
+          const y = button.closest("#modal");
+          console.log(y);
+
+          y.classList.remove("active");
+        });
+      });
+    </script>
+  </body>
+</html>
