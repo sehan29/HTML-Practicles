@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .mark_1 {
+        height: 3px;
+        width: 20px;
+        background-color: black;
+        margin-top: 4px;
+      }
+      .list_butn {
+        display: inline-block;
+        cursor: pointer;
+      }
+      .cattergary {
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .blocking {
+        height: 20px;
+        width: 20px;
+        background-color: black;
+      }
+
+      .body_color.active {
+        display: grid;
+        grid-template-columns: auto auto;
+      }
+      .months {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Container">
+      <div class="first_line">
+        <div class="list_butn">
+          <div class="mark_1"></div>
+          <div class="mark_1"></div>
+          <div class="mark_1"></div>
+        </div>
+        <div class="cattergary">
+          <div class="blocking"></div>
+        </div>
+      </div>
+      <div class="body_color">
+        <div class="months">
+          <h1 style="background-color: aqua">January</h1>
+        </div>
+        <div class="months">
+          <h1 style="background-color: blue">February</h1>
+        </div>
+        <div class="months">
+          <h1 style="background-color: rgb(15, 124, 15)">MArch</h1>
+        </div>
+        <div class="months">
+          <h1 style="background-color: rgb(111, 174, 225)">April</h1>
+        </div>
+        <div class="months">
+          <h1 style="background-color: rgb(6, 50, 50)">May</h1>
+        </div>
+        <div class="months">
+          <h1 style="background-color: rgb(201, 141, 20)">June</h1>
+        </div>
+        <div class="months">
+          <h1 style="background-color: rgb(101, 211, 33)">July</h1>
+        </div>
+        <div class="months">
+          <h1 style="background-color: rgb(228, 34, 70)">August</h1>
+        </div>
+        <div class="months">
+          <h1 style="background-color: rgb(209, 26, 130)">Sepetember</h1>
+        </div>
+        <div class="months">
+          <h1 style="background-color: rgb(63, 63, 67)">October</h1>
+        </div>
+        <div class="months">
+          <h1 style="background-color: rgb(53, 230, 76)">November</h1>
+        </div>
+        <div class="months">
+          <h1 style="background-color: rgb(164, 164, 214)">December</h1>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const list_btn = document.querySelector(".list_butn");
+      const catergory = document.querySelector(".cattergary");
+      const colors = document.querySelector(".body_color");
+      const x = document.getElementsByClassName("months");
+      console.log(x.length);
+
+      console.log(x[1]);
+
+      list_btn.addEventListener("click", () => {
+        let x = colors.classList.contains("active");
+        if (x) {
+          colors.classList.remove("active");
+        }
+      });
+
+      catergory.addEventListener("click", () => {
+        colors.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>
