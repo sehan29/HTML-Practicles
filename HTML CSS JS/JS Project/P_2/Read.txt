@@ -1,0 +1,2 @@
+I wanted to know the behavior of javascript, That is why I created this without any decoration.
+Level - 1.

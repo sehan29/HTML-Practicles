@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .progress_bar {
+        position: relative;
+        width: 100%;
+        height: 20px;
+        background-color: rgb(144, 220, 220);
+        border-radius: 20px;
+      }
+
+      .progross {
+        display: flex;
+        width: 0%;
+        height: 20px;
+        background-color: rgb(62, 111, 245);
+        border-radius: 20px;
+      }
+
+      .presentage {
+        position: absolute;
+        left: 50%;
+        color: aliceblue;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="progress_bar">
+        <div class="progross">
+          <div class="presentage"></div>
+        </div>
+      </div>
+      <button disabled class="disable">Download Now</button>
+      <button onclick="progressing()">save</button>
+
+      <div class="discription"></div>
+    </div>
+
+    <script src="javastript.js"></script>
+  </body>
+</html>
